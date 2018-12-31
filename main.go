@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -9,12 +10,21 @@ import (
 )
 
 func main() {
+	// Turn off annoying debuging logs
 	log.SetOutput(ioutil.Discard)
-	in := []byte("HELLO WORLD THINKS WORLD GREAT")
 
+	str := "Hello world."
+	// Simple trick to make a string longer
+	for i := 0; i < 13; i++ {
+		str += str
+	}
+	in := []byte(str)
+
+	// Compress
 	out := heatshrink.Compress(8, 3, in)
 	fmt.Printf("Compress: %v -> %v\n", len(in), len(out))
 
+	// Decompress
 	out2 := heatshrink.Decompress(8, 3, out)
-	fmt.Printf("Decompress: %v -> %v\n", len(out), len(out2))
+	fmt.Printf("Decompress: %v -> %v Equal: %v\n", len(out), len(out2), bytes.Equal(in, out2))
 }

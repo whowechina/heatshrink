@@ -1,7 +1,7 @@
 # heatshrink
 GO implementation of heatshrink
 
-This is a quick and dirty porting of Heatshrink by "Atomic Object", https://github.com/atomicobject/heatshrink.
+This is a quick and dirty port of Heatshrink by "Atomic Object": https://github.com/atomicobject/heatshrink.
 
 Sometimes your GOLANG based server system needs to communicate with embedded systems running heatshrink, your GO program needs to compress or decompress using heatshrink algorithm. This is what this project is created for.
 

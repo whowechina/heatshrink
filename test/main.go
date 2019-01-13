@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/whowechina/heatshrink/heatshrink"
+	"github.com/whowechina/heatshrink"
 )
 
 func main() {
